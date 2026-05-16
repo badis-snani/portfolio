@@ -1115,7 +1115,7 @@ footer {
           <i class="fas fa-paper-plane"></i>
           Get in Touch
         </a>
-        <a href="cv-badis-snani.pdf" class="btn-ghost" id="cv-btn" download>
+        <a href="#" class="btn-ghost" id="cv-btn" download>
           <i class="fas fa-download"></i>
           Download CV
         </a>
@@ -1140,7 +1140,7 @@ footer {
     <div class="profile-card">
       <div class="avatar-wrap">
         <div class="avatar">
-            <img src="badiss.jpg" alt="Badis Snani" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+          <i class="fas fa-user-tie"></i>
         </div>
         <div class="avatar-ring"></div>
         <div class="flag-badge">🇹🇳</div>
@@ -1175,9 +1175,9 @@ footer {
 
       <div class="card-links">
         <a href="mailto:Badis.snani@isimg.tn" class="card-link" title="Email"><i class="fas fa-envelope"></i></a>
-        <a href="https://www.linkedin.com/in/badiss-snani" class="card-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://github.com/badis-snani" class="card-link" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://badis-snani.github.io/portfolio/" class="card-link" title="Portfolio"><i class="fas fa-globe"></i></a>
+        <a href="#" class="card-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" class="card-link" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" class="card-link" title="Portfolio"><i class="fas fa-globe"></i></a>
       </div>
     </div>
   </div>
@@ -1496,8 +1496,8 @@ footer {
       <div style="margin-top:8px">
         <div class="ci-label" style="margin-bottom:14px">Connect online</div>
         <div style="display:flex;gap:12px">
-          <a href="https://www.linkedin.com/in/badiss-snani" class="card-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://github.com/badis-snani" class="card-link" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" class="card-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="card-link" title="GitHub"><i class="fab fa-github"></i></a>
           <a href="mailto:Badis.snani@isimg.tn" class="card-link" title="Email"><i class="fas fa-envelope"></i></a>
         </div>
       </div>
@@ -1545,8 +1545,8 @@ footer {
     Powered by <strong>Snani Badis</strong> &nbsp;·&nbsp; © 2025 All rights reserved
   </div>
   <div class="footer-links">
-    <a href="https://github.com/badis-snani" class="footer-link" title="GitHub"><i class="fab fa-github"></i></a>
-    <a href="https://www.linkedin.com/in/badiss-snani" class="footer-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a href="#" class="footer-link" title="GitHub"><i class="fab fa-github"></i></a>
+    <a href="#" class="footer-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
     <a href="mailto:Badis.snani@isimg.tn" class="footer-link" title="Email"><i class="fas fa-envelope"></i></a>
   </div>
 </footer>
@@ -1700,7 +1700,8 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
 
 /* ─── CV BUTTON ───────────────────────────────────────── */
 document.getElementById('cv-btn').addEventListener('click', function(e) {
-  // لا شيء — اتركه يعمل تلقائياً
+  e.preventDefault();
+  alert('📄 CV will be available once uploaded. Please contact Badis directly at Badis.snani@isimg.tn');
 });
 </script>
 </body>
