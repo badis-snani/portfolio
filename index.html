@@ -8,6 +8,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init("hJUO0synDduuCbDlj");</script>
 <style>
 /* ─── RESET & ROOT ─────────────────────────────────── */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -1139,9 +1141,9 @@ footer {
     <!-- Profile Card -->
     <div class="profile-card">
       <div class="avatar-wrap">
-        <div class="avatar">
-          <i class="fas fa-user-tie"></i>
-        </div>
+      <div class="avatar">
+        <img src="badiss.jpg" alt="Badis Snani" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+      </div>
         <div class="avatar-ring"></div>
         <div class="flag-badge">🇹🇳</div>
       </div>
@@ -1692,10 +1694,26 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
   const btn = this.querySelector('.form-submit');
   btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
   btn.disabled = true;
-  setTimeout(() => {
-    this.style.display = 'none';
-    document.getElementById('form-success').style.display = 'block';
-  }, 1500);
+
+  const params = {
+    name:       document.getElementById('fname').value,
+    email:      document.getElementById('femail').value,
+    title:      document.getElementById('fsubject').value,
+    message:    document.getElementById('fmessage').value,
+    reply_to:   document.getElementById('femail').value,
+  };
+
+  emailjs.send('service_cxogp4j', 'template_mc5fy3j', params)
+    .then(() => {
+      this.style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    })
+    .catch((err) => {
+      btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+      btn.disabled = false;
+      alert('❌ Failed to send. Please try again or contact directly at Badis.snani@isimg.tn');
+      console.error(err);
+    });
 });
 
 /* ─── CV BUTTON ───────────────────────────────────────── */
